@@ -1,8 +1,14 @@
 <?php
 
+// Add theme support
 add_theme_support('title-tag');
 
-function amit_css_js_file_calling(){
+// Enqueue CSS and JS
+function amit_css_js_file_calling() {
+
+    /* =========================
+       CSS FILES
+    ==========================*/
 
     // Bootstrap CSS CDN
     wp_enqueue_style(
@@ -13,7 +19,7 @@ function amit_css_js_file_calling(){
         'all'
     );
 
-    // Custom CSS (css folder theke)
+    // Custom CSS (css/custom.css)
     wp_enqueue_style(
         'custom-css',
         get_template_directory_uri() . '/css/custom.css',
@@ -22,7 +28,7 @@ function amit_css_js_file_calling(){
         'all'
     );
 
-    // Theme main style.css (optional)
+    // Theme main style.css
     wp_enqueue_style(
         'theme-style',
         get_stylesheet_uri(),
@@ -30,6 +36,33 @@ function amit_css_js_file_calling(){
         '1.0'
     );
 
+
+    /* =========================
+       JS FILES
+    ==========================*/
+
+    // WordPress built-in jQuery
+    wp_enqueue_script('jquery');
+
+    // Bootstrap JS CDN
+    wp_enqueue_script(
+        'bootstrap-js',
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js',
+        array('jquery'),
+        '5.3.2',
+        true
+    );
+
+    // Main JS file (js/main.js)
+    wp_enqueue_script(
+        'main-js',
+        get_template_directory_uri() . '/js/main.js',
+        array('jquery'),
+        '1.0',
+        true
+    );
+
 }
 
-add_action('wp_enqueue_scripts','amit_css_js_file_calling');
+// Hook
+add_action('wp_enqueue_scripts', 'amit_css_js_file_calling');

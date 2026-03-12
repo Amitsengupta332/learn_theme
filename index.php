@@ -15,6 +15,7 @@
 <body <?php body_class(); ?>>
 
     <div class="container mt-5">
+        <h1>Hello Amit! Theme is working perfectly now. custom css is working</h1>
         <h1 class="text-danger">Bootstrap Working</h1>
         <button class="btn btn-primary">Click Me</button>
     </div>
