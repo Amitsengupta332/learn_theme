@@ -24,13 +24,44 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <a href="">
-                        <!-- static logo calling -->
-                        <!-- <img src=" <?php //echo get_template_directory_uri(); ?> /img/logo1.png" alt="Logo"> -->
-                        <img src="<?php echo get_theme_mod('amit_logo'); ?>" alt="Logo">
+                    <!-- <a href=""> -->
+                    <!-- static logo calling -->
+                    <!-- <img src=" <?php //echo get_template_directory_uri(); ?> /img/logo1.png" alt="Logo"> -->
+                    <!-- <img src="<?php //echo get_theme_mod('amit_logo'); ?>" alt="Logo"> -->
+                    <!-- </a> -->
+
+                    <a href="<?php echo esc_url(home_url('/')); ?>">
+                        <img src="<?php echo get_theme_mod('amit_logo', get_template_directory_uri() . '/img/logo1.png'); ?>"
+                            alt="Logo" class="custom-logo">
                     </a>
+
                 </div>
-                <div class="col-md-9"></div>
+                <div class="col-md-9">
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'main_menu',
+                        'menu_id' => 'nav',
+                        'menu_class' => 'main-menu',
+                        'container' => false,
+                    ));
+                    ?>
+                    <!-- <ul id="nav">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About us</a></li>
+                        <li><a href="">Download</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Services</a>
+                            <ul>
+                                <li><a href="">Service 1</a></li>
+                                <li><a href="">Service 2</a></li>
+                                <li><a href="">Service 3</a></li>
+                                <li><a href="">Service 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Login</a></li>
+                        <li><a href="">Register</a></li>
+                    </ul> -->
+                </div>
             </div>
         </div>
     </div>
