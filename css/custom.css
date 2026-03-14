@@ -1,3 +1,12 @@
-h1{
+/* h1{
     color: green;
+} */
+/*? common css */
+img{
+    max-width: 100%;
+}
+
+/*  header */
+#header_area{
+    padding: 20px 0;
 }
